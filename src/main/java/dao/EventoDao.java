@@ -33,5 +33,20 @@ public class EventoDao {
         return fromDB;
     }
 
+    public void findByIdAndDelete(long id){
 
+        Evento fromDB = findById(id);
+
+        EntityTransaction transaction = em.getTransaction();
+
+        transaction.begin();
+
+        em.remove(fromDB);
+
+        transaction.commit();
+
+        System.out.println("L'evento: " + fromDB + "è stato rimosso con successo");
+
+
+    }
 }
