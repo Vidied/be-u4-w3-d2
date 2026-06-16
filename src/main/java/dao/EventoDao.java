@@ -23,7 +23,7 @@ public class EventoDao {
 
         transaction.commit();
 
-        System.out.println("L'evento: " + evento + "è stato salvato nel DB");
+        System.out.println("L'evento: " + evento + " è stato salvato nel DB");
     }
 
     public Evento findById(long id) {
@@ -45,7 +45,7 @@ public class EventoDao {
 
         transaction.commit();
 
-        System.out.println("L'evento: " + fromDB + "è stato rimosso con successo");
+        System.out.println("L'evento: " + fromDB + " è stato rimosso con successo");
 
 
     }
