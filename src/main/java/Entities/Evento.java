@@ -1,7 +1,6 @@
 package Entities;
 
 import jakarta.persistence.*;
-import org.w3c.dom.Text;
 
 import java.time.LocalDate;
 
