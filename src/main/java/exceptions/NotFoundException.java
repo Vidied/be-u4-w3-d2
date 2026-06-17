@@ -1,7 +1,9 @@
 package exceptions;
 
+import java.util.UUID;
+
 public class NotFoundException  extends RuntimeException{
-    public NotFoundException(long id) {
+    public NotFoundException(UUID id) {
         super("L'evento con id: " + id + "non è stato trovato!");
     }
 }

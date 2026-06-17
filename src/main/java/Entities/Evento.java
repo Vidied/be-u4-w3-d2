@@ -34,12 +34,13 @@ public class Evento {
 
     public Evento(){}
 
-    public Evento (String titolo, LocalDate data, String desc, EventType eventType, Integer max){
+    public Evento (String titolo, LocalDate data, String desc, EventType eventType, Integer max, Location location){
         this.titolo = titolo;
         this.data = data;
         this.desc = desc;
         this.eventType = eventType;
         this.max = max;
+        this.location = location;
     }
 
     public UUID getId() {

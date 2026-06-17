@@ -1,43 +1,42 @@
 package dao;
 
-import Entities.Evento;
+import Entities.Location;
 import exceptions.NotFoundException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
 import java.util.UUID;
 
-public class EventoDao {
+public class LocationDao {
 
     private final EntityManager em;
 
-
-    public EventoDao(EntityManager em) {
+    public LocationDao(EntityManager em) {
         this.em = em;
     }
 
-    public void save(Evento evento) {
+    public void save(Location location){
         EntityTransaction transaction = em.getTransaction();
 
         transaction.begin();
 
-        em.persist(evento);
+        em.persist(location);
 
         transaction.commit();
 
-        System.out.println("L'evento: " + evento + " è stato salvato nel DB");
+        System.out.println("La location: " + location + " è stato salvato nel DB");
     }
 
-    public Evento findById(UUID id) {
+    public Location findById(UUID id) {
 
-        Evento fromDB = em.find(Evento.class, id);
+        Location fromDB = em.find(Location.class, id);
         if(fromDB == null) throw new NotFoundException(id);
         return fromDB;
     }
 
     public void findByIdAndDelete(UUID id){
 
-        Evento fromDB = findById(id);
+        Location fromDB = findById(id);
 
         EntityTransaction transaction = em.getTransaction();
 
@@ -47,8 +46,9 @@ public class EventoDao {
 
         transaction.commit();
 
-        System.out.println("L'evento: " + fromDB + " è stato rimosso con successo");
+        System.out.println("La location: " + fromDB + " è stato rimosso con successo");
 
 
     }
 }
+
