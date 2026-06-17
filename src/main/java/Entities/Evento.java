@@ -3,13 +3,14 @@ package Entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 public class Evento {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "id_evento")
-    private Long id;
+    private UUID id;
 
     @Column(name = "titolo_evento")
     private String titolo;
@@ -41,7 +42,7 @@ public class Evento {
         this.max = max;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
