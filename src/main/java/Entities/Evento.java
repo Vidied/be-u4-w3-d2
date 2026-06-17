@@ -27,6 +27,10 @@ public class Evento {
     @Column(name = "max_partecipanti")
     private Integer max;
 
+    @ManyToOne
+    @JoinColumn(name = "location_id")
+    private Location location;
+
     public Evento(){}
 
     public Evento (String titolo, LocalDate data, String desc, EventType eventType, Integer max){
@@ -61,6 +65,10 @@ public class Evento {
         return max;
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
     @Override
     public String toString() {
         return "Evento{" +
@@ -70,6 +78,7 @@ public class Evento {
                 ", desc='" + desc + '\'' +
                 ", eventType=" + eventType +
                 ", max=" + max +
+                ", location=" + location +
                 '}';
     }
 }
