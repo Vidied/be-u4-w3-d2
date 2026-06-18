@@ -8,6 +8,9 @@
         <class>Entities.Location</class>
         <class>Entities.Persona</class>
         <class>Entities.Partecipazione</class>
+        <class>Entities.PartitaDiCalcio</class>
+        <class>Entities.GaraDiAtletica</class>
+        <class>Entities.Concerto</class>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/u4w3d2"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>

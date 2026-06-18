@@ -2,6 +2,7 @@ package Entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
@@ -21,7 +22,8 @@ public class GaraDiAtletica  extends  Evento{
 
     public GaraDiAtletica(){}
 
-    public GaraDiAtletica(Set<Persona> atleti, Persona vincitore) {
+    public GaraDiAtletica(String titolo, LocalDate data, String desc, EventType eventType, Integer max, Location location, Set<Persona> atleti, Persona vincitore) {
+        super(titolo, data, desc, eventType, max, location);
         this.atleti = atleti;
         this.vincitore = vincitore;
     }

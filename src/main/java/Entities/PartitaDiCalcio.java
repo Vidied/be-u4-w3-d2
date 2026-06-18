@@ -2,6 +2,8 @@ package Entities;
 
 import jakarta.persistence.Entity;
 
+import java.time.LocalDate;
+
 @Entity
 public class PartitaDiCalcio extends Evento{
 
@@ -13,7 +15,8 @@ public class PartitaDiCalcio extends Evento{
 
     public PartitaDiCalcio(){}
 
-    public PartitaDiCalcio(String squadraDiCasa, String squadraOspite, String squadraVincente, int numeroGolCasa, int numeroGolOspite) {
+    public PartitaDiCalcio(String titolo, LocalDate data, String desc, EventType eventType, Integer max, Location location, String squadraDiCasa, String squadraOspite, String squadraVincente, int numeroGolCasa, int numeroGolOspite) {
+        super(titolo, data, desc, eventType, max, location);
         this.squadraDiCasa = squadraDiCasa;
         this.squadraOspite = squadraOspite;
         this.squadraVincente = squadraVincente;
